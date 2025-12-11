@@ -1,6 +1,7 @@
 import { Routes, Route, Link } from "react-router-dom";
 import { useEffect } from "react";
-import Editor from "./components/Editor.jsx";
+import Editor from "./components/Editor";
+import AnnotationViewer from "./components/Viewer";
 
 function Home() {
   useEffect(() => {
@@ -17,6 +18,12 @@ function Home() {
       >
         Open Editor
       </Link>
+      <Link
+        to="/viewer"
+        className="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700"
+      >
+        Open Viewer
+      </Link>
     </div>
   );
 }
@@ -26,6 +33,7 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/editor" element={<Editor />} />
+      <Route path="/viewer" element={<AnnotationViewer />} />
     </Routes>
   );
 }
